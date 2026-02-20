@@ -6,7 +6,7 @@ def process_scores(students):
     return averages
 
 def classify_grades(averages):
-   (Local scope)
+    # (Local scope) - Fixed the syntax error by adding a '#'
     grade_a = 90
     grade_b = 75
     grade_c = 60
@@ -33,9 +33,8 @@ def generate_report(classified, passing_avg=70):
         status = "PASS" if avg >= passing_avg else "FAIL"
         if status == "PASS":
             passed_count += 1
-        
-    
-        print(f"{name:<10} | Avg: {avg:<5.2f} | Grade: {grade} | Status: {status}")
+
+print(f"{name:<10} | Avg: {avg:<5.2f} | Grade: {grade} | Status: {status}")
     
     print("================================")
     print(f"Total Students : {total_students}")
@@ -44,16 +43,13 @@ def generate_report(classified, passing_avg=70):
     
     return passed_count
 
-# Main Block
 if __name__ == "__main__":
-    # Sample Data
     student_data = {
         "Alice": [80, 85, 90, 90],
         "Bob": [60, 65, 60, 65],
         "Clara": [95, 98, 92, 100]
     }
     
- 
     avg_scores = process_scores(student_data)
     graded_data = classify_grades(avg_scores)
     total_passed = generate_report(graded_data)
